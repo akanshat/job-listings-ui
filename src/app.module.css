@@ -1,0 +1,12 @@
+.app {
+
+}
+
+.header{
+  position: relative;
+  min-height: 9.75em;
+  width: 100%;
+  background-image: url("./assets/header.svg");
+  margin-bottom: 4em;
+}
+

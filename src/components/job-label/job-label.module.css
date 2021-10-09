@@ -1,0 +1,9 @@
+.label{
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 2rem;
+    width: max-content;
+    color: white;
+    font-weight: 700;
+    margin-left: 1em;
+}

@@ -1,0 +1,22 @@
+{
+    "photosnap": {
+        "name": "PhotoSnap",
+        "logo": "logo1.svg"
+    },
+    "myhome": {
+        "name": "MyHome",
+        "logo": "logo2.svg"
+    },
+    "ripemedia": {
+        "name": "RipeMedia",
+        "logo": "logo4.svg"
+    },
+    "account": {
+        "name": "Account",
+        "logo": "logo3.svg"
+    },
+    "zoomfinity": {
+        "name": "ZoomFinity",
+        "logo": "logo5.svg"
+    }
+}

@@ -1,0 +1,89 @@
+.container {
+  position: absolute;
+  transform: translateY(50%);
+  bottom: 0;
+  width: 100%;
+  margin: auto;
+  max-height: 4.5em;
+}
+
+.form {
+  width: 80%;
+  border-radius: 0.3em;
+  padding: 1em 2em;
+  margin: auto;
+  display: flex;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+  box-sizing: border-box;
+}
+
+.form > input {
+  width: 100%;
+  border: none;
+  outline: none;
+  margin-left: 0.5em;
+}
+
+.form > input:focus-within ~ .dropdown,
+.dropdown:hover {
+  display: flex;
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  display: none;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  flex-direction: column;
+  left: 0em;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+}
+
+.dropbtn {
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-weight: 900;
+  background: transparent;
+  padding: 1em;
+
+  background: #fff;
+  position: relative;
+}
+
+.dropbtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 94%;
+  margin: auto;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.dropbtn:nth-last-child(1)::before {
+  border-bottom: none;
+}
+
+.search {
+  border: none;
+  outline: none;
+  font-weight: 700;
+  background-color: #fff;
+  color: #c5c5c5;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.search:hover {
+  color: #5ca5a5;
+  text-decoration: underline;
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "companyId": "photosnap",
+    "jobTags": ["NEW", "FEATURED"],
+    "title": "Senior Frontend Developer",
+    "timePosted": "2021-10-04T11:26:35.316Z",
+    "jobType": "Full Time",
+    "location": "USA",
+    "keywords": ["Senior", "React", "JavaScript", "SASS", "HTML"]
+  },
+  {
+    "companyId": "myhome",
+    "jobTags": [],
+    "title": "Junior Frontend Developer",
+    "timePosted": "2021-10-06T11:26:35.316Z",
+    "jobType": "Full Time",
+    "location": "USA",
+    "keywords": ["Frontend", "Junior", "React", "JavaScript", "CSS", "HTML"]
+  },
+  {
+    "companyId": "ripemedia",
+    "jobTags": ["NEW"],
+    "title": "Frontend Developer",
+    "timePosted": "2021-10-09T11:26:35.316Z",
+    "jobType": "Part Time",
+    "location": "Remote",
+    "keywords": ["Frontend", "Junior", "React", "JavaScript", "CSS", "HTML"]
+  },
+  {
+    "companyId": "account",
+    "jobTags": ["FEATURED"],
+    "title": "Frontend Developer",
+    "timePosted": "2021-10-08T11:26:35.316Z",
+    "jobType": "Part Time",
+    "location": "USA",
+    "keywords": ["Junior", "React", "JavaScript", "HTML"]
+  },
+  {
+    "companyId": "zoomfinity",
+    "jobTags": ["NEW"],
+    "title": "Senior Frontend Developer",
+    "timePosted": "2021-10-09T11:26:35.316Z",
+    "jobType": "Full Time",
+    "location": "USA",
+    "keywords": ["Senior", "React", "JavaScript", "SASS", "HTML"]
+  }
+]
