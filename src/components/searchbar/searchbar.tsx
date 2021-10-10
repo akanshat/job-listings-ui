@@ -5,11 +5,14 @@ import KeywordSelected from "../keywords/keywords-selected";
 const Searchbar = ({
   options,
   onSubmit,
+  selected,
+  setSelected,
 }: {
   options: string[];
   onSubmit: (selected: string[]) => void;
+  selected: string[];
+  setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }) => {
-  const [selected, setSelected] = useState<string[]>([]);
   const [filter, setFilter] = useState("");
   const [toggle, setToggle] = useState<boolean>(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,9 +38,8 @@ const Searchbar = ({
   const handleClear = () => {
     setSelected([]);
     onSubmit([]);
+    setToggle(false);
   };
-
-  // activate submit and clear buttons!
 
   return (
     <div className={styles.container}>

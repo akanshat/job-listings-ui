@@ -12,6 +12,7 @@ import Searchbar from "./components/searchbar/searchbar";
 function App() {
   const [jobs, setJobs] = useState<CardType[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<CardType[]>([]);
+  const [selected, setSelected] = useState<string[]>([]);
   let keywords = new Set(jobs.map((job) => job.keywords).flat());
   console.log(keywords);
   useEffect(() => {
@@ -42,9 +43,14 @@ function App() {
   return (
     <div className={styles.app}>
       <div className={styles.header}>
-        <Searchbar options={Array.from(keywords)} onSubmit={onSubmit} />
+        <Searchbar
+          options={Array.from(keywords)}
+          onSubmit={onSubmit}
+          selected={selected}
+          setSelected={setSelected}
+        />
       </div>
-      <CardList list={filteredJobs} />
+      <CardList list={filteredJobs} selectKeyword={setSelected} />
     </div>
   );
 }

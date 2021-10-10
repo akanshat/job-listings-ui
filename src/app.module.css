@@ -1,6 +1,7 @@
 .app {
   background-color: rgba(92, 165, 165, 0.1);
   padding-bottom: 2em;
+  min-height: 100vh;
 }
 
 .header {

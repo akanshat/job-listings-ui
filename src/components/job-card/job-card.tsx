@@ -7,6 +7,7 @@ import styles from "./job-card.module.css";
 
 type JobCardPropTypes = {
   cardItem: CardType;
+  selectKeyword: React.Dispatch<React.SetStateAction<string[]>>;
 };
 
 const relativeTimeHelper = (date: Date): string => {
@@ -31,7 +32,7 @@ const relativeTimeHelper = (date: Date): string => {
   return "too old";
 };
 
-const JobCard = ({ cardItem }: JobCardPropTypes) => {
+const JobCard = ({ cardItem, selectKeyword }: JobCardPropTypes) => {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
@@ -59,7 +60,16 @@ const JobCard = ({ cardItem }: JobCardPropTypes) => {
       </div>
       <div className={styles.skills}>
         {cardItem.keywords.map((keyword) => (
-          <KeywordTag name={keyword} />
+          <button
+            className={styles.selectbtn}
+            onClick={() =>
+              selectKeyword((prev) =>
+                prev.includes(keyword) ? prev : [...prev, keyword]
+              )
+            }
+          >
+            <KeywordTag name={keyword} />
+          </button>
         ))}
       </div>
     </div>
