@@ -17,6 +17,7 @@ const Searchbar = ({
   };
 
   const handleClick = (item: string) => {
+    setFilter("");
     setSelected((prev) => [...prev, item]);
     setToggle(false);
   };
@@ -36,6 +37,8 @@ const Searchbar = ({
     onSubmit([]);
   };
 
+  // activate submit and clear buttons!
+
   return (
     <div className={styles.container}>
       <div className={styles.form}>
@@ -47,21 +50,28 @@ const Searchbar = ({
             />
           ))}
         </span>
-        <input
-          name="filter"
-          value={filter}
-          onChange={handleChange}
-          placeholder={"Search"}
-        ></input>
-        {toggle ? (
-          <button onClick={handleClear} className={styles.search}>
-            Clear
-          </button>
-        ) : (
-          <button onClick={handleSubmit} className={styles.search}>
-            Submit
-          </button>
-        )}
+        <div className={styles.textfield}>
+          <input
+            className={styles.input}
+            name="filter"
+            value={filter}
+            onChange={handleChange}
+            placeholder={"Search"}
+          ></input>
+          {toggle ? (
+            <button onClick={handleClear} className={styles.search}>
+              Clear
+            </button>
+          ) : (
+            <button
+              onClick={handleSubmit}
+              disabled={selected.length === 0}
+              className={styles.search}
+            >
+              Submit
+            </button>
+          )}
+        </div>
         {
           <div className={styles.dropdown}>
             {options

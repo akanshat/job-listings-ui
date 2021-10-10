@@ -9,11 +9,11 @@
   color: #5ca5a5;
 }
 
-.tagcontainer{
+.tagcontainer {
   composes: container;
 }
 
-.tagcontainer:hover{
+.tagcontainer:hover {
   background: #5ca5a5;
   color: #fff;
 }
@@ -21,11 +21,11 @@
 .text {
   font-size: 0.8em;
   font-weight: 700;
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem;
 }
 
 .x {
-  padding: 0.3rem 0.5rem;
+  padding: 0.5rem;
   font-weight: 900;
   background: #5ca5a5;
   border-radius: 0 0.3em 0.3em 0;
@@ -33,6 +33,17 @@
   outline: none;
   border: none;
 }
-.x:hover{
-    background: #2b3939;
+.x:hover {
+  background: #2b3939;
+}
+/* @media only screen and (min-width: 1100px) {
+
+} */
+
+@media only screen and (max-width: 767px) {
+  .container {
+    margin: 0;
+    margin-right: 0.7em;
+    margin-top: 0.5em;
+  }
 }

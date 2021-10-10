@@ -19,14 +19,25 @@
   box-sizing: border-box;
 }
 
-.form > input {
+.textfield {
+  width: 100%;
+  display: flex;
+}
+
+.input {
   width: 100%;
   border: none;
   outline: none;
   margin-left: 0.5em;
 }
 
-.form > input:focus-within ~ .dropdown,
+.input::placeholder {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #000;
+}
+
+.form :focus-within ~ .dropdown,
 .dropdown:hover {
   display: flex;
 }
@@ -78,12 +89,27 @@
   outline: none;
   font-weight: 700;
   background-color: #fff;
-  color: #c5c5c5;
   cursor: pointer;
   font-size: 0.9em;
-}
-
-.search:hover {
   color: #5ca5a5;
   text-decoration: underline;
+}
+
+.search:disabled {
+  color: #c5c5c5;
+  text-decoration: none;
+}
+
+/* @media only screen and (min-width: 1100px) {
+} */
+
+@media only screen and (max-width: 767px) {
+  .form {
+    flex-wrap: wrap;
+  }
+
+  .skills {
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+  }
 }

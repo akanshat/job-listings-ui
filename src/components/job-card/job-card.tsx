@@ -47,9 +47,13 @@ const JobCard = ({ cardItem }: JobCardPropTypes) => {
           </div>
           <div className={styles.heading}>{cardItem.title}</div>
           <div className={styles.subtitle}>
-            <div>{relativeTimeHelper(cardItem?.timePosted)}</div>&#8226;
-            <div>{cardItem?.jobType}</div>&#8226;
-            <div>{cardItem?.location}</div>
+            <span className={styles.subitem}>
+              {relativeTimeHelper(cardItem?.timePosted)}
+            </span>
+            <span className={styles.subitem}>&#8226;</span>
+            <span className={styles.subitem}>{cardItem?.jobType}</span>
+            <span className={styles.subitem}>&#8226;</span>
+            <span className={styles.subitem}>{cardItem?.location}</span>
           </div>
         </div>
       </div>

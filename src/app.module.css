@@ -1,12 +1,12 @@
 .app {
-
+  background-color: rgba(92, 165, 165, 0.1);
+  padding-bottom: 2em;
 }
 
-.header{
+.header {
   position: relative;
   min-height: 9.75em;
   width: 100%;
   background-image: url("./assets/header.svg");
   margin-bottom: 4em;
 }
-
