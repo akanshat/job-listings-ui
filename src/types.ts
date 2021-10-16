@@ -4,6 +4,7 @@ export interface CompanyType {
 }
 
 export interface CardType {
+  id: string;
   company: CompanyType;
   jobTags: LabelTypes[];
   title: string;

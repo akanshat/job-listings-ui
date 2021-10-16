@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "companyId": "photosnap",
     "jobTags": ["NEW", "FEATURED"],
     "title": "Senior Frontend Developer",
@@ -9,6 +10,7 @@
     "keywords": ["Senior", "React", "JavaScript", "SASS", "HTML"]
   },
   {
+    "id": "2",
     "companyId": "myhome",
     "jobTags": [],
     "title": "Junior Frontend Developer",
@@ -18,6 +20,7 @@
     "keywords": ["Frontend", "Junior", "React", "JavaScript", "CSS", "HTML"]
   },
   {
+    "id": "3",
     "companyId": "ripemedia",
     "jobTags": ["NEW"],
     "title": "Frontend Developer",
@@ -27,6 +30,7 @@
     "keywords": ["Frontend", "Junior", "React", "JavaScript", "CSS", "HTML"]
   },
   {
+    "id": "4",
     "companyId": "account",
     "jobTags": ["FEATURED"],
     "title": "Frontend Developer",
@@ -36,6 +40,7 @@
     "keywords": ["Junior", "React", "JavaScript", "HTML"]
   },
   {
+    "id": "5",
     "companyId": "zoomfinity",
     "jobTags": ["NEW"],
     "title": "Senior Frontend Developer",

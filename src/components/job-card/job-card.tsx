@@ -11,23 +11,25 @@ type JobCardPropTypes = {
 };
 
 const relativeTimeHelper = (date: Date): string => {
+  const round = (num: number) => {
+    return Math.round(Math.floor(num));
+  };
+
   const today = new Date();
   let diff = Math.floor((today.getTime() - date.getTime()) / 86400000);
   if (diff === 0) {
     return "Today";
   }
-  if (diff === 1) {
-    return diff + " day ago";
-  }
+
   if (diff < 7) {
-    return diff + " days ago";
+    return round(diff) + "d ago";
   }
   diff = diff / 7;
   if (diff < 2) {
-    return diff + " week ago";
+    return round(diff) + " week ago";
   }
 
-  if (diff <= 4) return diff + " weeks ago";
+  if (diff <= 4) return round(diff) + " weeks ago";
 
   return "too old";
 };
@@ -42,8 +44,8 @@ const JobCard = ({ cardItem, selectKeyword }: JobCardPropTypes) => {
         <div className={styles.desc}>
           <div className={styles.details}>
             <span className={styles.cname}>{cardItem?.company?.name}</span>
-            {cardItem?.jobTags.map((tag) => (
-              <JobLabel label={tag} />
+            {cardItem?.jobTags.map((tag, idx) => (
+              <JobLabel key={"joblabel_" + idx} label={tag} />
             ))}
           </div>
           <div className={styles.heading}>{cardItem.title}</div>
@@ -58,19 +60,22 @@ const JobCard = ({ cardItem, selectKeyword }: JobCardPropTypes) => {
           </div>
         </div>
       </div>
-      <div className={styles.skills}>
-        {cardItem.keywords.map((keyword) => (
-          <button
-            className={styles.selectbtn}
-            onClick={() =>
-              selectKeyword((prev) =>
-                prev.includes(keyword) ? prev : [...prev, keyword]
-              )
-            }
-          >
-            <KeywordTag name={keyword} />
-          </button>
-        ))}
+      <div className={styles.right}>
+        <div className={styles.skills}>
+          {cardItem.keywords.map((keyword, idx) => (
+            <button
+              key={"carditem_" + idx}
+              className={styles.selectbtn}
+              onClick={() =>
+                selectKeyword((prev) =>
+                  prev.includes(keyword) ? prev : [...prev, keyword]
+                )
+              }
+            >
+              <KeywordTag name={keyword} />
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

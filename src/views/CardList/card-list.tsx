@@ -13,7 +13,11 @@ const CardList = ({ list, selectKeyword }: CardListPropTypes): JSX.Element => {
   return (
     <div className={styles.container}>
       {list.map((cardItem) => (
-        <JobCard cardItem={cardItem} selectKeyword={selectKeyword} />
+        <JobCard
+          key={cardItem.id}
+          cardItem={cardItem}
+          selectKeyword={selectKeyword}
+        />
       ))}
     </div>
   );

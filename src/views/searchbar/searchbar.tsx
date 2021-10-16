@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./searchbar.module.css";
-import KeywordSelected from "../keywords/keywords-selected";
+import KeywordSelected from "../../components/keywords/keywords-selected";
+import { colors } from "../../styles/colors";
 
 const Searchbar = ({
   options,
@@ -31,6 +32,7 @@ const Searchbar = ({
   };
 
   const handleSkillButton = (item: string) => {
+    onSubmit(selected.filter((e) => e !== item));
     setSelected((prev) => [...prev.filter((e) => e !== item)]);
     setToggle(false);
   };
@@ -41,12 +43,34 @@ const Searchbar = ({
     setToggle(false);
   };
 
+  const getHighlightedText = (item: string, searchString: string) => {
+    const parts = item.split(new RegExp(`(${searchString})`, "gi"));
+    return (
+      <span>
+        {" "}
+        {parts.map((part, i) => (
+          <span
+            key={i}
+            style={
+              part.toLowerCase() === searchString.toLowerCase()
+                ? { backgroundColor: colors.highlight }
+                : {}
+            }
+          >
+            {part}
+          </span>
+        ))}{" "}
+      </span>
+    );
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.form}>
         <span className={styles.skills}>
           {selected.map((item) => (
             <KeywordSelected
+              key={item}
               name={item}
               handleClickAction={() => handleSkillButton(item)}
             />
@@ -85,10 +109,11 @@ const Searchbar = ({
               })
               .map((item) => (
                 <button
+                  key={item}
                   className={styles.dropbtn}
                   onClick={() => handleClick(item)}
                 >
-                  {item}
+                  {getHighlightedText(item, filter)}
                 </button>
               ))}
           </div>

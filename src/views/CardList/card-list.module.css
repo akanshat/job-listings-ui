@@ -1,4 +1,11 @@
-.container{
-    width: 80%;
-    margin: auto;
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .container {
+    width: auto;
+    margin: 0 1.2em 0 1.2em;
+  }
 }

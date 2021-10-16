@@ -7,14 +7,14 @@ import CardList from "./views/CardList/card-list";
 import { CardType, LabelTypes } from "./types";
 
 import styles from "./app.module.css";
-import Searchbar from "./components/searchbar/searchbar";
+import Searchbar from "./views/searchbar/searchbar";
 
 function App() {
   const [jobs, setJobs] = useState<CardType[]>([]);
   const [filteredJobs, setFilteredJobs] = useState<CardType[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   let keywords = new Set(jobs.map((job) => job.keywords).flat());
-  console.log(keywords);
+
   useEffect(() => {
     const allJobs = JOB_INVENTORY.map<CardType>((item) => {
       return {
@@ -33,8 +33,8 @@ function App() {
       setFilteredJobs(jobs);
       return;
     }
-    setFilteredJobs((prevState) =>
-      prevState.filter((job) =>
+    setFilteredJobs(() =>
+      jobs.filter((job) =>
         selectedKeywords.every((keyword) => job.keywords.includes(keyword))
       )
     );
